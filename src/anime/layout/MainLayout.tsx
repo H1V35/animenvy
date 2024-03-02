@@ -7,10 +7,11 @@ type MainLayoutProps = {
 export function MainLayout({ children }: MainLayoutProps) {
   return (
     <div>
-      <div>
+      <header>
         <h1>AnimEnvy</h1>
-      </div>
-      <div>{children}</div>
+      </header>
+
+      <main>{children}</main>
     </div>
   );
 }
