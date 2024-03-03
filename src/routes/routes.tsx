@@ -3,7 +3,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 import { MainLayout } from '../anime/layout/MainLayout';
 import { lazyImport } from '../utils/lazyImport';
 
-const { AnimeListPage } = lazyImport(() => import('../anime/pages/AnimeList'), 'AnimeListPage');
+const { HomePage } = lazyImport(() => import('../anime/pages/Home'), 'HomePage');
 
 const App = () => {
   return (
@@ -20,7 +20,7 @@ export const routes = [
     path: '/',
     element: <App />,
     children: [
-      { path: '', element: <AnimeListPage /> },
+      { path: '', element: <HomePage /> },
       { path: '*', element: <Navigate to="." /> },
     ],
   },
