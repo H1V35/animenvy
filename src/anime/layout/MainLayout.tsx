@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavBar } from '../../shared/components/Navbar';
 
 type MainLayoutProps = {
   children: React.ReactNode;
@@ -7,9 +8,7 @@ type MainLayoutProps = {
 export function MainLayout({ children }: MainLayoutProps) {
   return (
     <div>
-      <header>
-        <h1>AnimEnvy</h1>
-      </header>
+      <NavBar />
 
       <main>{children}</main>
     </div>

@@ -4,6 +4,7 @@ import { MainLayout } from '../anime/layout/MainLayout';
 import { lazyImport } from '../utils/lazyImport';
 
 const { HomePage } = lazyImport(() => import('../anime/pages/Home'), 'HomePage');
+const { SearchPage } = lazyImport(() => import('../anime/pages/Search'), 'SearchPage');
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ export const routes = [
     element: <App />,
     children: [
       { path: '', element: <HomePage /> },
+      { path: '/search', element: <SearchPage /> },
       { path: '*', element: <Navigate to="." /> },
     ],
   },
