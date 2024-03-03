@@ -5,7 +5,9 @@ import { lazyImport } from '../utils/lazyImport';
 
 const { HomePage } = lazyImport(() => import('../anime/pages/Home'), 'HomePage');
 const { SearchPage } = lazyImport(() => import('../anime/pages/Search'), 'SearchPage');
+const { WatchlistPage } = lazyImport(() => import('../anime/pages/Watchlist'), 'WatchlistPage');
 
+// eslint-disable-next-line react-refresh/only-export-components
 const App = () => {
   return (
     <MainLayout>
@@ -23,6 +25,7 @@ export const routes = [
     children: [
       { path: '', element: <HomePage /> },
       { path: '/search', element: <SearchPage /> },
+      { path: '/watchlist', element: <WatchlistPage /> },
       { path: '*', element: <Navigate to="." /> },
     ],
   },

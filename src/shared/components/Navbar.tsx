@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 const routes = [
   { to: '/', text: 'Home' },
   { to: '/search', text: 'Search' },
+  { to: '/watchlist', text: 'Watchlist' },
 ];
 
 export function NavBar() {
