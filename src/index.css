@@ -40,7 +40,13 @@ a {
 }
 
 h1 {
+  margin: 0;
   font-size: 3.2em;
+  line-height: 1.1;
+}
+
+h2 {
+  margin: 0;
   line-height: 1.1;
 }
 
@@ -69,6 +75,16 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Layout */
+
+.layout__container {
+  min-height: 100vh;
+}
+
+.main__container {
+  padding: 1.2rem 2.4rem;
+}
+
 /* Navbar */
 
 .navbar {
@@ -91,7 +107,6 @@ button:focus-visible {
 
 .navbar__title {
   color: var(--color-primary);
-  margin: 0;
 
   font-size: 2rem;
 }

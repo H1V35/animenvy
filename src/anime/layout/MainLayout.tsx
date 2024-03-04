@@ -7,10 +7,10 @@ type MainLayoutProps = {
 
 export function MainLayout({ children }: MainLayoutProps) {
   return (
-    <div>
+    <div className="layout__container">
       <NavBar />
 
-      <main>{children}</main>
+      <main className="main__container">{children}</main>
     </div>
   );
 }
