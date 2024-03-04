@@ -18,7 +18,7 @@ export function NavBar() {
 
         <ul className="navbar__links">
           {routes.map(({ to, text }) => (
-            <li>
+            <li key={to}>
               <NavLink
                 to={to}
                 className={({ isActive }) =>
