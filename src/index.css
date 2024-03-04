@@ -11,30 +11,32 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --color-primary: #00b1d4;
+  --color-secondary: #80f3ff;
+  --color-light: #bff9ff;
+  --color-dark: #008694;
+  --color-black-light: #18181b;
+  --color-black: #000000;
+  --color-white: #ffffff;
 }
 
 #root {
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-a {
-  font-weight: 500;
-  color: #0c778a;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #085a63;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   margin: 0;
-  display: flex;
   min-width: 320px;
   min-height: 100vh;
+
+  display: flex;
+}
+
+a {
+  text-decoration: inherit;
 }
 
 h1 {
@@ -43,6 +45,8 @@ h1 {
 }
 
 ul {
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
 
@@ -53,27 +57,67 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #0c778a;
+  background-color: var(--color-primary);
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #c5f9ff;
+  border-color: var(--color-secondary);
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #085a63;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #8af3ff;
-  }
-  button {
-    background-color: #8af3ff;
-  }
+/* Navbar */
+
+.navbar {
+  background-color: var(--color-black-light);
+  padding: 0.8rem 2.4rem;
+
+  display: flex;
+  justify-content: center;
+}
+
+.navbar__container {
+  width: 100%;
+  max-width: 1280px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar__title {
+  color: var(--color-primary);
+  margin: 0;
+
+  font-size: 2rem;
+}
+
+.navbar__title--highlighted {
+  color: var(--color-white);
+}
+
+.navbar__links {
+  display: flex;
+  gap: 1.4rem;
+}
+
+.navbar__link {
+  color: var(--color-primary);
+
+  font-weight: 800;
+
+  transition: all;
+  transition-duration: 300ms;
+}
+
+.navbar__link:hover {
+  color: var(--color-secondary);
+}
+
+.navbar__link--active {
+  color: var(--color-secondary);
 }
