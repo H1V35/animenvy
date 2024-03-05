@@ -163,8 +163,9 @@ button:focus-visible {
 
 .aside__container {
   background-color: var(--color-black-light);
-  width: 100%;
   height: max-content;
+  min-height: 10rem;
+  width: 100%;
 
   margin-bottom: 0.5rem;
   margin-left: 0.5rem;
@@ -221,15 +222,15 @@ button:focus-visible {
 
 .background__gradient {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   z-index: -10;
 
   width: 100%;
-  height: 20rem;
+  height: 16rem;
 
   background-image: linear-gradient(
-    to top,
+    to bottom,
     rgba(0, 177, 212, 0.2) 30%,
     rgba(0, 177, 212, 0.1) 60%,
     rgba(0, 0, 0, 1) 100%
