@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavBar } from '../../shared/components/Navbar';
+import { NavBar } from '../components/Navbar';
 import { Aside } from '../components/Aside';
 
 type MainLayoutProps = {

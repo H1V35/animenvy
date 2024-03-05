@@ -1,25 +1,26 @@
-import { NavLink } from 'react-router-dom';
+import { AsideItem } from './AsideItem';
+import { HomeIcon } from '../../assets/HomeIcon';
+import { HomeFilledIcon } from '../../assets/HomeFilledIcon';
+import { WatchlistIcon } from '../../assets/WatchlistIcon';
+import { WatchlistFilledIcon } from '../../assets/WatchlistFilledIcon';
 
 const routes = [
-  { to: '/', text: 'Home' },
-  { to: '/watchlist', text: 'Watchlist' },
+  { to: '/', text: 'Home', icon: <HomeIcon />, iconFilled: <HomeFilledIcon /> },
+  {
+    to: '/watchlist',
+    text: 'Watchlist',
+    icon: <WatchlistIcon />,
+    iconFilled: <WatchlistFilledIcon />,
+  },
 ];
 
 export function Aside() {
   return (
     <div className="aside">
       <div className="aside__container">
-        <div className="aside__links">
-          {routes.map(({ to, text }) => (
-            <NavLink
-              key={to}
-              to={to}
-              className={({ isActive }) =>
-                isActive ? 'aside__link aside__link--active' : 'aside__link'
-              }
-            >
-              {text}
-            </NavLink>
+        <div className="aside__items">
+          {routes.map((route) => (
+            <AsideItem key={route.to} route={route} />
           ))}
         </div>
       </div>
