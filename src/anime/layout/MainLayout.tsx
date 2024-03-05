@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavBar } from '../../shared/components/Navbar';
+import { Aside } from '../components/Aside';
 
 type MainLayoutProps = {
   children: React.ReactNode;
@@ -8,13 +9,18 @@ type MainLayoutProps = {
 export function MainLayout({ children }: MainLayoutProps) {
   return (
     <div className="layout">
-      <NavBar />
+      <div className="layout__container">
+        <NavBar />
 
-      <main className="main">
-        <div className="main__container">{children}</div>
-      </main>
+        <Aside />
 
-      <div className="background__gradient"></div>
+        <main className="main">
+          <div className="main__container">
+            {children}
+            <div className="background__gradient"></div>
+          </div>
+        </main>
+      </div>
     </div>
   );
 }
