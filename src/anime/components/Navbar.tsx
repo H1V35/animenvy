@@ -1,10 +1,5 @@
 import { NavLink } from 'react-router-dom';
-
-const routes = [
-  { to: '/search', text: 'Search' },
-  { to: '/watchlist', text: 'Watchlist' },
-  { to: '/profile', text: 'Profile' },
-];
+import userIcon from '../../assets/userIcon.svg';
 
 export function NavBar() {
   return (
@@ -16,20 +11,14 @@ export function NavBar() {
           </h1>
         </NavLink>
 
-        <ul className="navbar__links">
-          {routes.map(({ to, text }) => (
-            <li key={to}>
-              <NavLink
-                to={to}
-                className={({ isActive }) =>
-                  isActive ? 'navbar__link navbar__link--active' : 'navbar__link'
-                }
-              >
-                {text}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
+        <div className="navbar__links">
+          <NavLink
+            to={'/profile'}
+            className={({ isActive }) => `navbar__link ${isActive ? 'navbar__link--active' : ''}`}
+          >
+            <img src={userIcon} alt="User Icon" className="navbar__link--profile" />
+          </NavLink>
+        </div>
       </div>
     </nav>
   );
