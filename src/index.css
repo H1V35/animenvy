@@ -165,6 +165,8 @@ button:focus-visible {
   border-color: var(--color-black-light-highlighted-secondary);
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
+
+  font-size: 1rem;
 }
 
 .navbar__search--input:focus {
