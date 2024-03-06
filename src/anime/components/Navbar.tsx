@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { SearchBar } from './SearchBar';
 import userIcon from '../../assets/userIcon.svg';
 
 export function NavBar() {
@@ -10,6 +11,8 @@ export function NavBar() {
             <span className="navbar__title--highlighted">Anim</span>Envy
           </h1>
         </NavLink>
+
+        <SearchBar />
 
         <div className="navbar__links">
           <NavLink
