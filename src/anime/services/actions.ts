@@ -10,7 +10,7 @@ export const getSeasonNow = async ({ page = 1 }: Props): Promise<AnimeList> => {
 
   params.append('filter', 'tv');
   params.append('page', page.toString());
-  params.append('limit', '10');
+  params.append('limit', '12');
 
   const response = await animeApi.get<AnimeList>({ endpoint: 'seasons/now', params });
   return response;

@@ -12,10 +12,12 @@ export function AnimeList({ list, isLoading }: AnimeListProps) {
   if (isLoading) return <p>Loading...</p>;
 
   return (
-    <div>
-      {list.data.map((anime) => {
-        return <AnimeItem key={anime.mal_id} anime={anime} />;
-      })}
+    <div className="animeList">
+      <div className="animeList__container">
+        {list.data.map((anime) => (
+          <AnimeItem key={anime.mal_id} anime={anime} />
+        ))}
+      </div>
     </div>
   );
 }

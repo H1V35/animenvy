@@ -6,21 +6,23 @@ export function HomePage() {
   const { list, isLoading, page, nextPage, prevPage, firstPage, lastPage } = useSeasonNow();
 
   return (
-    <>
-      <h2>Season</h2>
+    <div className="page">
+      <div className="page__container">
+        <h2 className="page__title">New episodes every week</h2>
 
-      <br />
-      <PagesNavigation
-        page={page}
-        isLoading={isLoading}
-        prevPage={prevPage}
-        nextPage={nextPage}
-        firstPage={firstPage}
-        lastPage={lastPage}
-      />
-      <br />
+        <div className="page__list">
+          {list && <AnimeList list={list} isLoading={isLoading} />}
 
-      {list && <AnimeList list={list} isLoading={isLoading} />}
-    </>
+          <PagesNavigation
+            page={page}
+            isLoading={isLoading}
+            prevPage={prevPage}
+            nextPage={nextPage}
+            firstPage={firstPage}
+            lastPage={lastPage}
+          />
+        </div>
+      </div>
+    </div>
   );
 }
