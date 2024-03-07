@@ -15,17 +15,20 @@ export function useSeasonNow() {
     })();
   }, [page]);
 
+  const hasPrevPage = page !== 1;
+  const hasNextPage = season?.pagination.has_next_page;
+
   const prevPage = () => {
     if (page > 1) setPage(page - 1);
   };
 
   const nextPage = () => {
-    if (season?.pagination.has_next_page === false) return;
+    if (hasNextPage === false) return;
     setPage(page + 1);
   };
 
   const firstPage = () => {
-    if (page !== 1) setPage(1);
+    if (hasPrevPage) setPage(1);
   };
 
   const lastPage = () => {
@@ -39,6 +42,8 @@ export function useSeasonNow() {
     list: season,
     isLoading,
     page,
+    hasPrevPage,
+    hasNextPage,
     prevPage,
     nextPage,
     firstPage,

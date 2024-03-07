@@ -1,5 +1,7 @@
 type PagesNavigationProps = {
   page: number;
+  hasPrevPage: boolean;
+  hasNextPage?: boolean;
   isLoading: boolean;
   prevPage: () => void;
   nextPage: () => void;
@@ -9,6 +11,8 @@ type PagesNavigationProps = {
 
 export function PagesNavigation({
   page,
+  hasPrevPage,
+  hasNextPage,
   isLoading,
   prevPage,
   nextPage,
@@ -19,7 +23,7 @@ export function PagesNavigation({
     <div className="pagesNavigation">
       <button
         onClick={firstPage}
-        disabled={isLoading}
+        disabled={isLoading || !hasPrevPage}
         title="First page"
         className="pagesNavigation--button"
       >
@@ -28,7 +32,7 @@ export function PagesNavigation({
 
       <button
         onClick={prevPage}
-        disabled={isLoading}
+        disabled={isLoading || !hasPrevPage}
         title="Previous page"
         className="pagesNavigation--button"
       >
@@ -39,7 +43,7 @@ export function PagesNavigation({
 
       <button
         onClick={nextPage}
-        disabled={isLoading}
+        disabled={isLoading || !hasNextPage}
         title="Next page"
         className="pagesNavigation--button"
       >
@@ -48,7 +52,7 @@ export function PagesNavigation({
 
       <button
         onClick={lastPage}
-        disabled={isLoading}
+        disabled={isLoading || !hasNextPage}
         title="Last page"
         className="pagesNavigation--button"
       >

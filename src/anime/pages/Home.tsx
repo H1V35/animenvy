@@ -3,7 +3,17 @@ import { PagesNavigation } from '../components/PagesNavigation';
 import { useSeasonNow } from '../hooks/useSeasonNow';
 
 export function HomePage() {
-  const { list, isLoading, page, nextPage, prevPage, firstPage, lastPage } = useSeasonNow();
+  const {
+    list,
+    isLoading,
+    page,
+    hasPrevPage,
+    hasNextPage,
+    nextPage,
+    prevPage,
+    firstPage,
+    lastPage,
+  } = useSeasonNow();
 
   return (
     <div className="page">
@@ -15,6 +25,8 @@ export function HomePage() {
 
           <PagesNavigation
             page={page}
+            hasPrevPage={hasPrevPage}
+            hasNextPage={hasNextPage}
             isLoading={isLoading}
             prevPage={prevPage}
             nextPage={nextPage}
