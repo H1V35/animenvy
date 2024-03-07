@@ -1,4 +1,6 @@
-export interface Season {
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+export interface AnimeList {
   pagination: Pagination;
   data: Datum[];
 }
@@ -157,3 +159,5 @@ export interface Items {
   total: number;
   per_page: number;
 }
+
+/* eslint-enable @typescript-eslint/no-explicit-any */

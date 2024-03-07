@@ -1,25 +1,26 @@
+import { AnimeList } from '../components/AnimeList';
+import { PagesNavigation } from '../components/PagesNavigation';
 import { useSeasonNow } from '../hooks/useSeasonNow';
 
 export function HomePage() {
-  const { season, isLoading, page, nextPage, prevPage } = useSeasonNow();
-
-  if (isLoading) return <p>Loading...</p>;
-
-  if (!season) return null;
+  const { list, isLoading, page, nextPage, prevPage, firstPage, lastPage } = useSeasonNow();
 
   return (
     <>
       <h2>Season</h2>
+
       <br />
-      <button onClick={prevPage}>Prev</button>
-      <p>{page}</p>
-      <button onClick={nextPage}>Next</button>
+      <PagesNavigation
+        page={page}
+        isLoading={isLoading}
+        prevPage={prevPage}
+        nextPage={nextPage}
+        firstPage={firstPage}
+        lastPage={lastPage}
+      />
       <br />
-      <div>
-        {season.data.map((anime) => {
-          return <img key={anime.mal_id} src={anime.images.webp.image_url} alt="" />;
-        })}
-      </div>
+
+      {list && <AnimeList list={list} isLoading={isLoading} />}
     </>
   );
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 import { getSeasonNow } from '../services/actions';
-import { Season } from '../interfaces/season';
+import { AnimeList } from '../interfaces/animeList';
 
 export function useSeasonNow() {
-  const [season, setSeason] = React.useState<Season>();
+  const [season, setSeason] = React.useState<AnimeList>();
   const [isLoading, setIsLoading] = React.useState(false);
   const [page, setPage] = React.useState(1);
 
@@ -15,20 +15,33 @@ export function useSeasonNow() {
     })();
   }, [page]);
 
+  const prevPage = () => {
+    if (page > 1) setPage(page - 1);
+  };
+
   const nextPage = () => {
     if (season?.pagination.has_next_page === false) return;
     setPage(page + 1);
   };
 
-  const prevPage = () => {
-    if (page > 1) setPage(page - 1);
+  const firstPage = () => {
+    if (page !== 1) setPage(1);
+  };
+
+  const lastPage = () => {
+    if (!season) return null;
+
+    const lastVisiblePage = season.pagination.last_visible_page;
+    if (page !== lastVisiblePage) setPage(lastVisiblePage);
   };
 
   return {
-    season: season,
+    list: season,
     isLoading,
-    page: isLoading ? 'Loading...' : page,
-    nextPage,
+    page,
     prevPage,
+    nextPage,
+    firstPage,
+    lastPage,
   };
 }
