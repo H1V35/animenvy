@@ -1,23 +1,19 @@
 type PagesNavigationProps = {
-  page: number;
-  hasPrevPage: boolean;
-  hasNextPage?: boolean;
   isLoading: boolean;
-  prevPage: () => void;
-  nextPage: () => void;
-  firstPage: () => void;
-  lastPage: () => void;
+  pagination: {
+    page: number;
+    hasPrevPage: boolean;
+    hasNextPage?: boolean;
+    prevPage: () => void;
+    nextPage: () => void;
+    firstPage: () => void;
+    lastPage: () => void;
+  };
 };
 
 export function PagesNavigation({
-  page,
-  hasPrevPage,
-  hasNextPage,
   isLoading,
-  prevPage,
-  nextPage,
-  firstPage,
-  lastPage,
+  pagination: { page, hasPrevPage, hasNextPage, prevPage, nextPage, firstPage, lastPage },
 }: PagesNavigationProps) {
   return (
     <div className="pagesNavigation">

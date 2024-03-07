@@ -41,12 +41,6 @@ export function useSeasonNow() {
   return {
     list: season,
     isLoading,
-    page,
-    hasPrevPage,
-    hasNextPage,
-    prevPage,
-    nextPage,
-    firstPage,
-    lastPage,
+    pagination: { page, hasPrevPage, hasNextPage, prevPage, nextPage, firstPage, lastPage },
   };
 }

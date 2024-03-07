@@ -3,17 +3,7 @@ import { PagesNavigation } from '../components/PagesNavigation';
 import { useSeasonNow } from '../hooks/useSeasonNow';
 
 export function HomePage() {
-  const {
-    list,
-    isLoading,
-    page,
-    hasPrevPage,
-    hasNextPage,
-    nextPage,
-    prevPage,
-    firstPage,
-    lastPage,
-  } = useSeasonNow();
+  const { list, isLoading, pagination } = useSeasonNow();
 
   return (
     <div className="page">
@@ -23,16 +13,7 @@ export function HomePage() {
         <div className="page__list">
           {list && <AnimeList list={list} isLoading={isLoading} />}
 
-          <PagesNavigation
-            page={page}
-            hasPrevPage={hasPrevPage}
-            hasNextPage={hasNextPage}
-            isLoading={isLoading}
-            prevPage={prevPage}
-            nextPage={nextPage}
-            firstPage={firstPage}
-            lastPage={lastPage}
-          />
+          <PagesNavigation isLoading={isLoading} pagination={pagination} />
         </div>
       </div>
     </div>
