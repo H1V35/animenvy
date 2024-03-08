@@ -1,14 +1,8 @@
+import type { PagesNavigation } from '../interfaces/pagesNavigation';
+
 type PagesNavigationProps = {
   isLoading: boolean;
-  pagination: {
-    page: number;
-    hasPrevPage: boolean;
-    hasNextPage?: boolean;
-    prevPage: () => void;
-    nextPage: () => void;
-    firstPage: () => void;
-    lastPage: () => void;
-  };
+  pagination: PagesNavigation;
 };
 
 export function PagesNavigation({
