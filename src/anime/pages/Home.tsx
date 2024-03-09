@@ -1,6 +1,6 @@
+import { useSeasonNow } from '../hooks/useSeasonNow';
 import { AnimeList } from '../components/AnimeList';
 import { PagesNavigation } from '../components/PagesNavigation';
-import { useSeasonNow } from '../hooks/useSeasonNow';
 
 export function HomePage() {
   const { list, isLoading, pagination } = useSeasonNow();
