@@ -19,7 +19,7 @@ export function AnimeItem({
       <div className="animeItem__container">
         <div className="animeItem__cover">
           <img src={image_url} alt={`${title_english} cover`} className="animeItem__cover--image" />
-          <p className="animeItem__score">{score}</p>
+          {score && <p className="animeItem__score">{score}</p>}
         </div>
 
         <h3 className="animeItem__title" title={title_english || title}>
