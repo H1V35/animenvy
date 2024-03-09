@@ -11,12 +11,12 @@ type WatchlistItem = {
 
 type WatchlistContextType = {
   watchlist: WatchlistItem[];
-  setWatchlist: React.Dispatch<React.SetStateAction<WatchlistItem[]>>;
+  addAnimeToWatchlist: ({ anime }: { anime: WatchlistItem }) => void;
 };
 
 const defaultWatchlistContextValue: WatchlistContextType = {
   watchlist: [],
-  setWatchlist: () => {},
+  addAnimeToWatchlist: () => {},
 };
 
 const WatchlistContext = React.createContext<WatchlistContextType>(defaultWatchlistContextValue);
@@ -24,12 +24,19 @@ const WatchlistContext = React.createContext<WatchlistContextType>(defaultWatchl
 export const AppProvider = ({ children }: AppProviderProps) => {
   const [watchlist, setWatchlist] = React.useState<WatchlistItem[]>([]);
 
+  const addAnimeToWatchlist = React.useCallback(
+    ({ anime }: { anime: WatchlistItem }) => {
+      setWatchlist([...watchlist, anime]);
+    },
+    [watchlist]
+  );
+
   const contextValue = React.useMemo(
     () => ({
       watchlist,
-      setWatchlist,
+      addAnimeToWatchlist,
     }),
-    [watchlist, setWatchlist]
+    [watchlist, addAnimeToWatchlist]
   );
 
   console.log('Watchlist: ', watchlist);
