@@ -1,5 +1,5 @@
-import { AnimeList } from '../interfaces/animeList';
 import { AnimeItem } from './AnimeItem';
+import type { AnimeList } from '../interfaces/animeList';
 
 type AnimeListProps = {
   list: AnimeList;

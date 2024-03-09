@@ -1,5 +1,5 @@
 import { useSearch } from '../hooks/useSearch';
-import { AnimeList } from '../components/AnimeList';
+import { SearchList } from '../components/SearchList';
 import { PagesNavigation } from '../components/PagesNavigation';
 
 export function SearchPage() {
@@ -9,7 +9,7 @@ export function SearchPage() {
     <div className="page">
       <div className="page__container">
         <div className="page__list">
-          {list && <AnimeList list={list} isLoading={isLoading} />}
+          {list && <SearchList list={list} isLoading={isLoading} />}
 
           <PagesNavigation isLoading={isLoading} pagination={pagination} />
         </div>

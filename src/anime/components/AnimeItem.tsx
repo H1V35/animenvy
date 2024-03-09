@@ -1,6 +1,6 @@
-import { Datum } from '../interfaces/animeList';
+import type { Datum } from '../interfaces/animeList';
 
-type AnimeItem = {
+type AnimeItemProps = {
   anime: Datum;
 };
 
@@ -13,7 +13,7 @@ export function AnimeItem({
     },
     score,
   },
-}: AnimeItem) {
+}: AnimeItemProps) {
   return (
     <div className="animeItem">
       <div className="animeItem__container">

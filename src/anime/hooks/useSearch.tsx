@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { getSearch } from '../services/actions';
-import { AnimeList } from '../interfaces/animeList';
+import type { AnimeList } from '../interfaces/animeList';
 
 export function useSearch() {
   const [search, setSearch] = React.useState<AnimeList>();

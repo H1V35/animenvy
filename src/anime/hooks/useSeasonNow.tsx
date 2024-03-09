@@ -1,6 +1,6 @@
 import React from 'react';
 import { getSeasonNow } from '../services/actions';
-import { AnimeList } from '../interfaces/animeList';
+import type { AnimeList } from '../interfaces/animeList';
 
 export function useSeasonNow() {
   const [season, setSeason] = React.useState<AnimeList>();
