@@ -9,7 +9,7 @@ type AsideItemProps = {
   };
 };
 
-export function AsideItem({ route: { to, text, icon, iconFilled } }: AsideItemProps) {
+export function AsideLink({ route: { to, text, icon, iconFilled } }: AsideItemProps) {
   return (
     <NavLink key={to} to={to}>
       {({ isActive }) => (

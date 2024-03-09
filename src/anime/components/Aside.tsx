@@ -1,4 +1,4 @@
-import { AsideItem } from './AsideItem';
+import { AsideLink } from './AsideLink';
 import { HomeIcon } from '../../assets/HomeIcon';
 import { HomeFilledIcon } from '../../assets/HomeFilledIcon';
 import { WatchlistIcon } from '../../assets/WatchlistIcon';
@@ -20,7 +20,7 @@ export function Aside() {
       <div className="aside__container">
         <div className="aside__items">
           {routes.map((route) => (
-            <AsideItem key={route.to} route={route} />
+            <AsideLink key={route.to} route={route} />
           ))}
         </div>
       </div>

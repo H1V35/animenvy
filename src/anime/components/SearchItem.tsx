@@ -1,5 +1,5 @@
+import { SearchItemSynopsis } from './SearchItemSynopsis';
 import { roundFavorites } from '../../utils/roundFavorites';
-import { sliceSynopsis } from '../../utils/sliceSynopsis';
 import type { Datum } from '../interfaces/animeList';
 
 type SearchItemProps = {
@@ -36,15 +36,17 @@ export function SearchItem({
             {title_english || title}
           </h3>
 
-          <p className="searchItem__data--favorites">
-            {favorites && roundFavorites(favorites)} favorites
-          </p>
+          {favorites && (
+            <p className="searchItem__data--favorites">{roundFavorites(favorites)} favorites</p>
+          )}
 
-          <p className="searchItem__data--genres">
-            {genres && genres.map((genre) => genre.name).join(' • ')}
-          </p>
+          {genres && (
+            <p className="searchItem__data--genres">
+              {genres.map((genre) => genre.name).join(' • ')}
+            </p>
+          )}
 
-          <p className="searchItem__data--synopsis">{synopsis && sliceSynopsis(synopsis)}</p>
+          {synopsis && <SearchItemSynopsis synopsis={synopsis} />}
         </div>
       </div>
     </div>

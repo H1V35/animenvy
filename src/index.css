@@ -33,7 +33,8 @@
 
 body {
   margin: 0;
-  min-width: 1250px;
+  width: 100vw;
+  min-width: 900px;
   min-height: 100vh;
 
   display: flex;
@@ -557,14 +558,14 @@ ul {
   flex-direction: column;
   gap: 0.5rem;
 
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .searchItem__data--title {
   flex-shrink: 0;
 
   white-space: nowrap;
-  overflow: inherit;
+  overflow: hidden;
   text-overflow: ellipsis;
 
   font-weight: 800;
@@ -573,10 +574,6 @@ ul {
 
 .searchItem__data--favorites {
   flex-shrink: 0;
-
-  white-space: nowrap;
-  overflow: inherit;
-  text-overflow: ellipsis;
 
   color: var(--color-secondary);
   font-weight: 400;
@@ -587,7 +584,7 @@ ul {
   flex-shrink: 0;
 
   white-space: nowrap;
-  overflow: inherit;
+  overflow: hidden;
   text-overflow: ellipsis;
 
   color: var(--color-white-600);
@@ -597,10 +594,17 @@ ul {
 
 .searchItem__data--synopsis {
   margin-top: 0.25rem;
+  padding-right: 1rem;
 
-  overflow: inherit;
+  overflow: auto;
   text-overflow: ellipsis;
 
   font-size: 1rem;
   font-weight: 500;
+  line-height: 1.25;
+}
+
+.searchItem__data--synopis--more {
+  color: var(--color-primary);
+  font-weight: 700;
 }
