@@ -4,7 +4,7 @@ import { SearchIcon } from '../../assets/SearchIcon';
 
 export function SearchBar() {
   const [query, setQuery] = React.useState('');
-  const [, setSearchParams] = useSearchParams();
+  const [_searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
   const navigate = useNavigate();
 
