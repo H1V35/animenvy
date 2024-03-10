@@ -24,15 +24,19 @@ export function Aside() {
     <div className="aside">
       <div className="aside__container">
         <div className="aside__items">
-          {routes.map((route) => (
-            <AsideLink key={route.to} route={route} />
-          ))}
-
-          <div className="aside__watchlist">
-            {watchlist.map((anime) => (
-              <AsideItem key={anime.mal_id} anime={anime} />
+          <div className="aside__links">
+            {routes.map((route) => (
+              <AsideLink key={route.to} route={route} />
             ))}
           </div>
+
+          {watchlist.length > 0 && (
+            <div className="aside__watchlist">
+              {watchlist.map((anime) => (
+                <AsideItem key={anime.mal_id} anime={anime} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

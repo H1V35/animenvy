@@ -249,9 +249,20 @@ ul {
 
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
+}
+
+.aside__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
 }
 
 .aside__watchlist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+
   overflow: auto;
 }
 
