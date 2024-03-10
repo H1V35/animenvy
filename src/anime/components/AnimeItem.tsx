@@ -1,5 +1,5 @@
 import React from 'react';
-import { WatchlistContext } from '../../providers/app';
+import { WatchlistContext } from '../../providers/WatchlistProvider';
 import type { Datum } from '../interfaces/animeList';
 
 type AnimeItemProps = {
