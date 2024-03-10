@@ -16,6 +16,7 @@
   --color-secondary: #80f3ff;
   --color-light: #bff9ff;
   --color-dark: #008694;
+  --color-contrast: #ff7f50;
   --color-black-light: #111111;
   --color-black-light-highlighted: #292929;
   --color-black-light-highlighted-secondary: #3f3f3f;
@@ -534,12 +535,38 @@ ul {
   text-align: center;
 }
 
-.animeItem__addToWatchlist {
+.animeItem__toggle {
   cursor: pointer;
 
   position: absolute;
   top: 0.75rem;
   right: 0.75rem;
+
+  background-color: #3f3f3f99;
+  width: 36px;
+  height: 36px;
+  padding: 0.5rem;
+  border-radius: 100%;
+  border: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all;
+  transition-duration: 200ms;
+}
+
+.animeItem__toggle:hover {
+  scale: 1.1;
+}
+
+.animeItem__toggle--saved {
+  color: var(--color-contrast);
+}
+
+.animeItem__toggle--notSaved {
+  color: var(--color-white-300);
 }
 
 /* SearchList */
@@ -630,6 +657,8 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+
+  overflow: hidden;
 }
 
 .searchItem__data--title {

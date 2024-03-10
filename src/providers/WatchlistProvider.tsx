@@ -1,5 +1,5 @@
 import React from 'react';
-import { isInWatchlist } from '../utils/isInWatchlist';
+import { checkAnimeInWatchlist } from '../utils/checkAnimeInWatchlist';
 import type { Datum } from '../anime/interfaces/animeList';
 
 type WatchlistProviderProps = {
@@ -29,7 +29,7 @@ export function WatchlistProvider({ children }: WatchlistProviderProps) {
 
   const toggleAnimeWatchlist = React.useCallback(
     ({ anime }: WatchlistItem) => {
-      if (isInWatchlist({ anime, watchlist })) {
+      if (checkAnimeInWatchlist({ anime, watchlist })) {
         const newWatchlist = watchlist.filter(
           (watchlistAnime) => watchlistAnime.mal_id !== anime.mal_id
         );
