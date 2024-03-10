@@ -1,11 +1,10 @@
-import { Datum } from '../anime/interfaces/animeList';
+import type { Datum } from '../anime/interfaces/animeList';
 
-export const checkAnimeInWatchlist = ({
-  anime,
-  watchlist,
-}: {
+type CheckAnimeInWatchlistProps = {
   anime: Datum;
   watchlist: Datum[];
-}) => {
+};
+
+export const checkAnimeInWatchlist = ({ anime, watchlist }: CheckAnimeInWatchlistProps) => {
   return watchlist.some((watchlistAnime) => watchlistAnime.mal_id === anime.mal_id);
 };
