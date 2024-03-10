@@ -42,6 +42,7 @@ export function AnimeItem({ anime }: AnimeItemProps) {
 
       <button
         onClick={handleClick}
+        title={isAnimeInWatchlist ? 'Remove from watchlist' : 'Add to watchlist'}
         className={`animeItem__toggle ${
           isAnimeInWatchlist ? 'animeItem__toggle--saved' : 'animeItem__toggle--notSaved'
         }`}

@@ -540,7 +540,7 @@ ul {
 
   position: absolute;
   top: 0.75rem;
-  right: 0.75rem;
+  left: 0.75rem;
 
   background-color: #3f3f3f99;
   width: 36px;
@@ -586,6 +586,10 @@ ul {
 }
 
 /* SearchItem */
+
+.searchItem--wrapper {
+  position: relative;
+}
 
 .searchItem {
   cursor: pointer;
@@ -707,4 +711,38 @@ ul {
 .searchItem__data--synopis--more {
   color: var(--color-primary);
   font-weight: 700;
+}
+
+.searchItem__toggle {
+  cursor: pointer;
+
+  position: absolute;
+  top: 1rem;
+  left: 1.75rem;
+
+  background-color: #3f3f3f99;
+  width: 36px;
+  height: 36px;
+  padding: 0.5rem;
+  border-radius: 100%;
+  border: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all;
+  transition-duration: 200ms;
+}
+
+.searchItem__toggle:hover {
+  scale: 1.1;
+}
+
+.searchItem__toggle--saved {
+  color: var(--color-contrast);
+}
+
+.searchItem__toggle--notSaved {
+  color: var(--color-white-300);
 }
