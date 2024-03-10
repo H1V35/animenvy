@@ -28,9 +28,11 @@ export function Aside() {
             <AsideLink key={route.to} route={route} />
           ))}
 
-          {watchlist.map((anime) => (
-            <AsideItem key={anime.mal_id} anime={anime} />
-          ))}
+          <div className="aside__watchlist">
+            {watchlist.map((anime) => (
+              <AsideItem key={anime.mal_id} anime={anime} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

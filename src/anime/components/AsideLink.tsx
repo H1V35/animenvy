@@ -13,9 +13,13 @@ export function AsideLink({ route: { to, text, icon, iconFilled } }: AsideItemPr
   return (
     <NavLink key={to} to={to}>
       {({ isActive }) => (
-        <div className={`aside__item ${isActive ? 'aside__item--active' : ''}`}>
-          {isActive ? iconFilled : icon}
-          <p>{text}</p>
+        <div
+          className={`asideItem asideItem__link ${
+            isActive ? 'asideItem--active asideItem__link--active' : ''
+          }`}
+        >
+          <div className="asideItem__image">{isActive ? iconFilled : icon}</div>
+          <p className="asideItem__title">{text}</p>
         </div>
       )}
     </NavLink>

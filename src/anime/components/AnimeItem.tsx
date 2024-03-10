@@ -16,11 +16,11 @@ export function AnimeItem({ anime }: AnimeItemProps) {
   return (
     <div className="animeItem">
       <div className="animeItem__container">
-        <div className="animeItem__cover">
+        <div className="animeItem__image">
           <img
             src={anime.images.webp.image_url}
             alt={`${anime.title_english} cover`}
-            className="animeItem__cover--image"
+            className="animeItem__image--cover"
           />
           {anime.score && <p className="animeItem__score">{anime.score}</p>}
         </div>

@@ -22,11 +22,11 @@ export function SearchItem({
   return (
     <div className="searchItem">
       <div className="searchItem__container">
-        <div className="searchItem__cover">
+        <div className="searchItem__image">
           <img
             src={image_url}
             alt={`${title_english} cover`}
-            className="searchItem__cover--image"
+            className="searchItem__image--cover"
           />
           {score && <p className="searchItem__score">{score}</p>}
         </div>
