@@ -393,6 +393,10 @@ ul {
   gap: 1.5rem;
 }
 
+.page__noContent {
+  font-size: 1.6rem;
+}
+
 /* PagesNavigation */
 
 .pagesNavigation {
