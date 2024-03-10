@@ -10,8 +10,8 @@ type WatchlistItem = {
 };
 
 type WatchlistContextType = {
-  watchlist: WatchlistItem[];
-  addAnimeToWatchlist: ({ anime }: { anime: WatchlistItem }) => void;
+  watchlist: Datum[];
+  addAnimeToWatchlist: ({ anime }: WatchlistItem) => void;
 };
 
 const defaultWatchlistContextValue: WatchlistContextType = {
@@ -19,13 +19,15 @@ const defaultWatchlistContextValue: WatchlistContextType = {
   addAnimeToWatchlist: () => {},
 };
 
-const WatchlistContext = React.createContext<WatchlistContextType>(defaultWatchlistContextValue);
+export const WatchlistContext = React.createContext<WatchlistContextType>(
+  defaultWatchlistContextValue
+);
 
 export const AppProvider = ({ children }: AppProviderProps) => {
-  const [watchlist, setWatchlist] = React.useState<WatchlistItem[]>([]);
+  const [watchlist, setWatchlist] = React.useState<Datum[]>([]);
 
   const addAnimeToWatchlist = React.useCallback(
-    ({ anime }: { anime: WatchlistItem }) => {
+    ({ anime }: WatchlistItem) => {
       setWatchlist([...watchlist, anime]);
     },
     [watchlist]
@@ -38,8 +40,6 @@ export const AppProvider = ({ children }: AppProviderProps) => {
     }),
     [watchlist, addAnimeToWatchlist]
   );
-
-  console.log('Watchlist: ', watchlist);
 
   return (
     <React.Suspense fallback={<h2>Loading...</h2>}>
