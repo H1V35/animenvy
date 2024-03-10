@@ -5,7 +5,7 @@ type AsideItemProps = {
   anime: Datum;
 };
 
-export function AsideItem({ anime }: AsideItemProps) {
+export function AsideAnime({ anime }: AsideItemProps) {
   return (
     <NavLink key={anime.mal_id} to={`/anime/${anime.mal_id}`}>
       {({ isActive }) => (

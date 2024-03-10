@@ -1,7 +1,7 @@
 import React from 'react';
 import { WatchlistContext } from '../../providers/WatchlistProvider';
 import { AsideLink } from './AsideLink';
-import { AsideItem } from './AsideItem';
+import { AsideAnime } from './AsideAnime';
 import { HomeIcon } from '../../assets/HomeIcon';
 import { HomeFilledIcon } from '../../assets/HomeFilledIcon';
 import { WatchlistIcon } from '../../assets/WatchlistIcon';
@@ -33,7 +33,7 @@ export function Aside() {
           {watchlist.length > 0 && (
             <div className="aside__watchlist">
               {watchlist.map((anime) => (
-                <AsideItem key={anime.mal_id} anime={anime} />
+                <AsideAnime key={anime.mal_id} anime={anime} />
               ))}
             </div>
           )}
