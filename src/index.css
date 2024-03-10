@@ -457,9 +457,11 @@ ul {
 
 /* AnimeItem */
 
-.animeItem {
-  cursor: pointer;
+.animeItem--wrapper {
+  position: relative;
+}
 
+.animeItem {
   background-color: var(--color-black-light);
   box-sizing: border-box;
   height: max-content;
@@ -530,6 +532,14 @@ ul {
   font-size: 1rem;
   line-height: 1;
   text-align: center;
+}
+
+.animeItem__addToWatchlist {
+  cursor: pointer;
+
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
 }
 
 /* SearchList */

@@ -1,4 +1,5 @@
 import React from 'react';
+import { isInWatchlist } from '../utils/isInWatchlist';
 import type { Datum } from '../anime/interfaces/animeList';
 
 type WatchlistProviderProps = {
@@ -11,12 +12,12 @@ type WatchlistItem = {
 
 type WatchlistContextType = {
   watchlist: Datum[];
-  addAnimeToWatchlist: ({ anime }: WatchlistItem) => void;
+  toggleAnimeWatchlist: ({ anime }: WatchlistItem) => void;
 };
 
 const defaultWatchlistContextValue: WatchlistContextType = {
   watchlist: [],
-  addAnimeToWatchlist: () => {},
+  toggleAnimeWatchlist: () => {},
 };
 
 export const WatchlistContext = React.createContext<WatchlistContextType>(
@@ -26,8 +27,16 @@ export const WatchlistContext = React.createContext<WatchlistContextType>(
 export function WatchlistProvider({ children }: WatchlistProviderProps) {
   const [watchlist, setWatchlist] = React.useState<Datum[]>([]);
 
-  const addAnimeToWatchlist = React.useCallback(
+  const toggleAnimeWatchlist = React.useCallback(
     ({ anime }: WatchlistItem) => {
+      if (isInWatchlist({ anime, watchlist })) {
+        const newWatchlist = watchlist.filter(
+          (watchlistAnime) => watchlistAnime.mal_id !== anime.mal_id
+        );
+        setWatchlist(newWatchlist);
+        return;
+      }
+
       setWatchlist([...watchlist, anime]);
     },
     [watchlist]
@@ -36,9 +45,9 @@ export function WatchlistProvider({ children }: WatchlistProviderProps) {
   const contextValue = React.useMemo(
     () => ({
       watchlist,
-      addAnimeToWatchlist,
+      toggleAnimeWatchlist,
     }),
-    [watchlist, addAnimeToWatchlist]
+    [watchlist, toggleAnimeWatchlist]
   );
 
   return <WatchlistContext.Provider value={contextValue}>{children}</WatchlistContext.Provider>;

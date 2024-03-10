@@ -8,32 +8,36 @@ type AnimeItemProps = {
 };
 
 export function AnimeItem({ anime }: AnimeItemProps) {
-  const { addAnimeToWatchlist } = React.useContext(WatchlistContext);
+  const { toggleAnimeWatchlist } = React.useContext(WatchlistContext);
 
   const handleClick = () => {
-    addAnimeToWatchlist({ anime });
+    toggleAnimeWatchlist({ anime });
   };
 
   return (
-    <Link key={anime.mal_id} to={`/anime/${anime.mal_id}`}>
-      <div className="animeItem">
-        <div className="animeItem__container">
-          <div className="animeItem__image">
-            <img
-              src={anime.images.webp.image_url}
-              alt={`${anime.title_english} cover`}
-              className="animeItem__image--cover"
-            />
-            {anime.score && <p className="animeItem__score">{anime.score}</p>}
+    <div className="animeItem--wrapper">
+      <Link key={anime.mal_id} to={`/anime/${anime.mal_id}`}>
+        <div className="animeItem">
+          <div className="animeItem__container">
+            <div className="animeItem__image">
+              <img
+                src={anime.images.webp.image_url}
+                alt={`${anime.title_english} cover`}
+                className="animeItem__image--cover"
+              />
+              {anime.score && <p className="animeItem__score">{anime.score}</p>}
+            </div>
+
+            <h3 className="animeItem__title" title={anime.title_english || anime.title}>
+              {anime.title_english || anime.title}
+            </h3>
           </div>
-
-          <h3 className="animeItem__title" title={anime.title_english || anime.title}>
-            {anime.title_english || anime.title}
-          </h3>
-
-          <button onClick={handleClick}>ADD TO WATCHLIST</button>
         </div>
-      </div>
-    </Link>
+      </Link>
+
+      <button onClick={handleClick} className="animeItem__addToWatchlist">
+        ADD TO WATCHLIST
+      </button>
+    </div>
   );
 }
