@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { WatchlistContext } from '../../providers/WatchlistProvider';
 import type { Datum } from '../interfaces/animeList';
 
@@ -15,7 +15,7 @@ export function AnimeItem({ anime }: AnimeItemProps) {
   };
 
   return (
-    <NavLink key={anime.mal_id} to={`/anime/${anime.mal_id}`}>
+    <Link key={anime.mal_id} to={`/anime/${anime.mal_id}`}>
       <div className="animeItem">
         <div className="animeItem__container">
           <div className="animeItem__image">
@@ -34,6 +34,6 @@ export function AnimeItem({ anime }: AnimeItemProps) {
           <button onClick={handleClick}>ADD TO WATCHLIST</button>
         </div>
       </div>
-    </NavLink>
+    </Link>
   );
 }

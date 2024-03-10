@@ -1,7 +1,7 @@
+import { Link } from 'react-router-dom';
 import { SearchItemSynopsis } from './SearchItemSynopsis';
 import { roundFavorites } from '../../utils/roundFavorites';
 import type { Datum } from '../interfaces/animeList';
-import { NavLink } from 'react-router-dom';
 
 type SearchItemProps = {
   anime: Datum;
@@ -9,7 +9,7 @@ type SearchItemProps = {
 
 export function SearchItem({ anime }: SearchItemProps) {
   return (
-    <NavLink key={anime.mal_id} to={`/anime/${anime.mal_id}`}>
+    <Link key={anime.mal_id} to={`/anime/${anime.mal_id}`}>
       <div className="searchItem">
         <div className="searchItem__container">
           <div className="searchItem__image">
@@ -42,6 +42,6 @@ export function SearchItem({ anime }: SearchItemProps) {
           </div>
         </div>
       </div>
-    </NavLink>
+    </Link>
   );
 }
