@@ -1,11 +1,11 @@
-import { Navigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useAnime } from '../hooks/useAnime';
 
 export function AnimePage() {
   const { animeId } = useParams();
   const { anime, isLoading } = useAnime(animeId!);
 
-  if (!anime) return <Navigate to={'/'} />;
+  if (!anime) return null;
 
   if (isLoading) return <p>Loading...</p>;
 
