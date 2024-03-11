@@ -1,24 +1,12 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { WatchlistContext } from '../../providers/WatchlistProvider';
-import { checkAnimeInWatchlist } from '../../utils/checkAnimeInWatchlist';
+import { ToggleButton } from './ToggleButton';
 import type { Datum } from '../interfaces/animeList';
-import { SaveIcon } from '../../assets/SaveIcon';
-import { SaveFilledIcon } from '../../assets/SaveFilledIcon';
 
 type AnimeItemProps = {
   anime: Datum;
 };
 
 export function AnimeItem({ anime }: AnimeItemProps) {
-  const { watchlist, toggleAnimeWatchlist } = React.useContext(WatchlistContext);
-
-  const isAnimeInWatchlist = checkAnimeInWatchlist({ anime, watchlist });
-
-  const handleClick = () => {
-    toggleAnimeWatchlist({ anime });
-  };
-
   return (
     <div className="animeItem--wrapper">
       <Link key={anime.mal_id} to={`/anime/${anime.mal_id}`}>
@@ -40,15 +28,7 @@ export function AnimeItem({ anime }: AnimeItemProps) {
         </div>
       </Link>
 
-      <button
-        onClick={handleClick}
-        title={isAnimeInWatchlist ? 'Remove from watchlist' : 'Add to watchlist'}
-        className={`animeItem__toggle ${
-          isAnimeInWatchlist ? 'animeItem__toggle--saved' : 'animeItem__toggle--notSaved'
-        }`}
-      >
-        {isAnimeInWatchlist ? <SaveFilledIcon /> : <SaveIcon />}
-      </button>
+      <ToggleButton anime={anime} item="AnimeItem" />
     </div>
   );
 }
