@@ -11,7 +11,9 @@ export function SearchPage() {
         <div className="page__list">
           {list && <SearchList list={list} isLoading={isLoading} />}
 
-          <PagesNavigation isLoading={isLoading} pagination={pagination} />
+          {list?.data && list?.data.length > 0 && (
+            <PagesNavigation isLoading={isLoading} pagination={pagination} />
+          )}
         </div>
       </div>
     </div>

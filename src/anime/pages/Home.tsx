@@ -13,7 +13,9 @@ export function HomePage() {
         <div className="page__list">
           {list && <AnimeList list={list} isLoading={isLoading} />}
 
-          <PagesNavigation isLoading={isLoading} pagination={pagination} />
+          {list?.data && list?.data.length > 0 && (
+            <PagesNavigation isLoading={isLoading} pagination={pagination} />
+          )}
         </div>
       </div>
     </div>
