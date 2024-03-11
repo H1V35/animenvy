@@ -7,12 +7,8 @@ const handleErrors = (response: Response) => {
   return response;
 };
 
-type Props = {
-  searchUrl: string;
-};
-
 const animeApi = {
-  get: async <T>({ searchUrl }: Props): Promise<T> => {
+  get: async <T>(searchUrl: string): Promise<T> => {
     const response = await fetch(`${API_URL}${searchUrl}`);
     handleErrors(response);
     return response.json();
