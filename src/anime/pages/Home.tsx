@@ -1,9 +1,9 @@
-import { useSeasonNow } from '../hooks/useSeasonNow';
+import { useHome } from '../hooks/useHome';
 import { AnimeList } from '../components/AnimeList';
 import { PagesNavigation } from '../components/PagesNavigation';
 
 export function HomePage() {
-  const { list, isLoading, pagination } = useSeasonNow();
+  const { season, isLoading, pagination } = useHome();
 
   return (
     <div className="page">
@@ -11,9 +11,9 @@ export function HomePage() {
         <h2 className="page__title">New episodes every week</h2>
 
         <div className="page__list">
-          {list && <AnimeList list={list} isLoading={isLoading} />}
+          {season && <AnimeList list={season} isLoading={isLoading} />}
 
-          {list?.data && list?.data.length > 0 && (
+          {season?.data && season?.data.length > 0 && (
             <PagesNavigation isLoading={isLoading} pagination={pagination} />
           )}
         </div>

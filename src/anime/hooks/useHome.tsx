@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { getSeasonsNow } from '../services/actions';
 import type { AnimeList } from '../interfaces/animeList';
 
-export function useSeasonNow() {
+export function useHome() {
   const [season, setSeason] = React.useState<AnimeList>();
   const [isLoading, setIsLoading] = React.useState(false);
   const [page, setPage] = React.useState(1);
@@ -43,7 +43,7 @@ export function useSeasonNow() {
   };
 
   return {
-    list: season,
+    season,
     isLoading,
     pagination: { page, hasPrevPage, hasNextPage, prevPage, nextPage, firstPage, lastPage },
   };
