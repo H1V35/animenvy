@@ -14,7 +14,7 @@ export function WatchlistPage() {
           {watchlist.length > 0 ? (
             <WatchList list={watchlist} />
           ) : (
-            <p className="page__noContent">Nothing to see yet here...</p>
+            <p className="page__noContent">Nothing to see here yet...</p>
           )}
         </div>
       </div>

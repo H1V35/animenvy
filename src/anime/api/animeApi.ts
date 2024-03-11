@@ -8,13 +8,12 @@ const handleErrors = (response: Response) => {
 };
 
 type Props = {
-  endpoint: string;
-  params?: URLSearchParams;
+  searchUrl: string;
 };
 
 const animeApi = {
-  get: async <T>({ endpoint, params }: Props): Promise<T> => {
-    const response = await fetch(`${API_URL}/${endpoint}?${params}`);
+  get: async <T>({ searchUrl }: Props): Promise<T> => {
+    const response = await fetch(`${API_URL}${searchUrl}`);
     handleErrors(response);
     return response.json();
   },
