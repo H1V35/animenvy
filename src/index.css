@@ -746,3 +746,114 @@ ul {
 .searchItem__toggle--notSaved {
   color: var(--color-white-300);
 }
+
+/* Anime */
+
+.anime {
+  display: flex;
+  justify-content: center;
+}
+
+.anime__container {
+  width: 100%;
+  max-width: 1400px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.anime__iframe {
+  max-height: 80vh;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+}
+
+.anime__title {
+  position: sticky;
+  color: var(--color-white);
+  font-size: 2rem;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+.anime__info {
+  display: flex;
+  gap: 2rem;
+}
+
+.anime__data {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.anime__data--favorites {
+  color: var(--color-secondary);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.anime__data--genres {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  color: var(--color-white-600);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.anime__data--synopsis {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-right: 1rem;
+
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.anime__data--streaming {
+  display: flex;
+  gap: 2rem;
+}
+
+.anime__data--link {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.anime__image {
+  position: relative;
+
+  margin-right: 1rem;
+
+  display: flex;
+  flex-shrink: 0;
+}
+
+.anime__image--cover {
+  border-radius: 8px;
+
+  object-fit: cover;
+}
+
+.anime__score {
+  position: absolute;
+  bottom: 0.25rem;
+  left: 0.25rem;
+
+  background-color: var(--color-primary);
+  width: 2.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 100px;
+
+  color: var(--color-white);
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1;
+  text-align: center;
+}
