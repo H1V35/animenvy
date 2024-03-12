@@ -4,9 +4,10 @@ import { checkAnimeInWatchlist } from '../../utils/checkAnimeInWatchlist';
 import { SaveIcon } from '../../assets/SaveIcon';
 import { SaveFilledIcon } from '../../assets/SaveFilledIcon';
 import type { Datum } from '../interfaces/animeList';
+import { Data } from '../interfaces/anime';
 
 type Props = {
-  anime: Datum;
+  anime: Datum | Data;
   item: 'AnimeItem' | 'SearchItem';
 };
 

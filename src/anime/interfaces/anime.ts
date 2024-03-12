@@ -31,7 +31,7 @@ export interface Data {
   favorites: number;
   synopsis: string;
   background: string;
-  season: string;
+  season: string | null;
   year: number;
   broadcast: Broadcast;
   producers: Demographic[];
@@ -74,14 +74,9 @@ export interface Broadcast {
 
 export interface Demographic {
   mal_id: number;
-  type: Type;
+  type: string;
   name: string;
   url: string;
-}
-
-export enum Type {
-  Anime = 'anime',
-  Manga = 'manga',
 }
 
 export interface External {

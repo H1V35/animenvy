@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import { useAnime } from '../hooks/useAnime';
 import { roundFavorites } from '../../utils/roundFavorites';
+import { ToggleButton } from '../components/ToggleButton';
 
 export function AnimePage() {
   const { animeId } = useParams();
@@ -29,16 +30,8 @@ export function AnimePage() {
         </div>
 
         <div className="anime__name">
+          <ToggleButton anime={anime} item="AnimeItem" />
           <h2 className="anime__name--title">{anime.title_english}</h2>
-        </div>
-
-        <div className="anime__image">
-          <img
-            src={anime.images.webp.image_url}
-            alt={`${anime.title_english} cover`}
-            className="anime__image--cover"
-          />
-          {anime.score && <p className="anime__score">{anime.score}</p>}
         </div>
 
         {anime.favorites && (
@@ -62,6 +55,15 @@ export function AnimePage() {
             ))}
           </div>
         )}
+
+        <div className="anime__image">
+          <img
+            src={anime.images.webp.large_image_url}
+            alt={`${anime.title_english} cover`}
+            className="anime__image--cover"
+          />
+          {anime.score && <p className="anime__score">{anime.score}</p>}
+        </div>
       </div>
     </div>
   );

@@ -16,14 +16,14 @@ export interface Datum {
   title_english: null | string;
   title_japanese: string;
   title_synonyms: string[];
-  type: DatumType;
-  source: Source;
+  type: string;
+  source: string;
   episodes: number | null;
-  status: Status;
+  status: string;
   airing: boolean;
   aired: Aired;
   duration: string;
-  rating: Rating;
+  rating: string;
   score: number;
   scored_by: number;
   rank: number;
@@ -32,7 +32,7 @@ export interface Datum {
   favorites: number;
   synopsis: string;
   background: null | string;
-  season: SeasonEnum | null;
+  season: string | null;
   year: number | null;
   broadcast: Broadcast;
   producers: Demographic[];
@@ -65,23 +65,15 @@ export interface From {
 export interface Broadcast {
   day: null | string;
   time: null | string;
-  timezone: Timezone | null;
+  timezone: string | null;
   string: null | string;
-}
-
-export enum Timezone {
-  AsiaTokyo = 'Asia/Tokyo',
 }
 
 export interface Demographic {
   mal_id: number;
-  type: DemographicType;
+  type: string;
   name: string;
   url: string;
-}
-
-export enum DemographicType {
-  Anime = 'anime',
 }
 
 export interface Image {
@@ -90,41 +82,9 @@ export interface Image {
   large_image_url: string;
 }
 
-export enum Rating {
-  GAllAges = 'G - All Ages',
-  PG13Teens13OrOlder = 'PG-13 - Teens 13 or older',
-  R17ViolenceProfanity = 'R - 17+ (violence & profanity)',
-  RMildNudity = 'R+ - Mild Nudity',
-}
-
-export enum SeasonEnum {
-  Fall = 'fall',
-  Spring = 'spring',
-  Winter = 'winter',
-}
-
-export enum Source {
-  LightNovel = 'Light novel',
-  Manga = 'Manga',
-  WebManga = 'Web manga',
-}
-
-export enum Status {
-  CurrentlyAiring = 'Currently Airing',
-}
-
 export interface Title {
-  type: TitleType;
+  type: string;
   title: string;
-}
-
-export enum TitleType {
-  Default = 'Default',
-  English = 'English',
-  German = 'German',
-  Japanese = 'Japanese',
-  Spanish = 'Spanish',
-  Synonym = 'Synonym',
 }
 
 export interface Trailer {
@@ -140,11 +100,6 @@ export interface Images {
   medium_image_url: null | string;
   large_image_url: null | string;
   maximum_image_url: null | string;
-}
-
-export enum DatumType {
-  Movie = 'Movie',
-  Tv = 'TV',
 }
 
 export interface Pagination {
