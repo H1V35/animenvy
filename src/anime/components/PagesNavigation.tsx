@@ -5,6 +5,8 @@ type PagesNavigationProps = {
   pagination: PagesNavigation;
 };
 
+// TODO: Componentization
+
 export function PagesNavigation({
   isLoading,
   pagination: { page, hasPrevPage, hasNextPage, prevPage, nextPage, firstPage, lastPage },

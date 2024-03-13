@@ -2,6 +2,8 @@ import { animeApi } from '../api/animeApi';
 import type { Anime, Data } from '../interfaces/anime';
 import type { AnimeList } from '../interfaces/animeList';
 
+// TODO: Move to api folder
+
 type Props = {
   searchParams: URLSearchParams;
   page?: number;

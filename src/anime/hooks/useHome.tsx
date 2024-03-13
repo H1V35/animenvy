@@ -19,6 +19,7 @@ export function useHome() {
     })();
   }, [location.search, page]);
 
+  // TODO: Make a custom hook for pagination
   const hasPrevPage = page !== 1;
   const hasNextPage = season?.pagination.has_next_page;
 

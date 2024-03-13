@@ -4,7 +4,7 @@ import { checkAnimeInWatchlist } from '../../utils/checkAnimeInWatchlist';
 import { SaveIcon } from '../../assets/SaveIcon';
 import { SaveFilledIcon } from '../../assets/SaveFilledIcon';
 import type { Datum } from '../interfaces/animeList';
-import { Data } from '../interfaces/anime';
+import type { Data } from '../interfaces/anime';
 
 type Props = {
   anime: Datum | Data;
@@ -12,6 +12,7 @@ type Props = {
 };
 
 export function ToggleButton({ anime, item }: Props) {
+  // TODO: Make a custom hook to wrap the context
   const { watchlist, toggleAnimeWatchlist } = React.useContext(WatchlistContext);
 
   const isAnimeInWatchlist = checkAnimeInWatchlist({ anime, watchlist });

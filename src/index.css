@@ -339,7 +339,7 @@ ul {
   position: relative;
 
   width: 100%;
-  padding: 2rem 2.5rem;
+  padding: 2rem 3rem;
   border-radius: 8px;
 
   overflow-x: hidden;
@@ -760,11 +760,11 @@ ul {
 
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.75rem;
 }
 
 .anime__iframe {
-  max-height: 80vh;
+  max-height: 82vh;
   aspect-ratio: 16/9;
   border-radius: 8px;
 }
@@ -779,6 +779,8 @@ ul {
 }
 
 .anime__info {
+  width: 100%;
+
   display: flex;
   gap: 2rem;
 }
@@ -829,10 +831,7 @@ ul {
 .anime__image {
   position: relative;
 
-  margin-right: 1rem;
-
   display: flex;
-  flex-shrink: 0;
 }
 
 .anime__image--cover {

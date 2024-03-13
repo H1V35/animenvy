@@ -7,12 +7,10 @@ const handleErrors = (response: Response) => {
   return response;
 };
 
-const animeApi = {
+export const animeApi = {
   get: async <T>(searchUrl: string): Promise<T> => {
     const response = await fetch(`${API_URL}${searchUrl}`);
     handleErrors(response);
     return response.json();
   },
 };
-
-export { animeApi };

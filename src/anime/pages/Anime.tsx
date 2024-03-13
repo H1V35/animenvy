@@ -3,6 +3,8 @@ import { useAnime } from '../hooks/useAnime';
 import { roundFavorites } from '../../utils/roundFavorites';
 import { ToggleButton } from '../components/ToggleButton';
 
+// TODO: Componentization
+
 export function AnimePage() {
   const { animeId } = useParams();
   const { anime, isLoading } = useAnime(animeId!);
@@ -49,10 +51,11 @@ export function AnimePage() {
 
                 {anime.synopsis && <p className="anime__data--synopsis">{anime.synopsis}</p>}
 
+                {/* TODO: Make links seem like buttons for links */}
                 {anime.streaming && (
                   <div className="anime__data--streaming">
                     {anime.streaming.map((stream) => (
-                      <Link to={stream.url} className="anime__data--link">
+                      <Link to={stream.url} target="_blank" className="anime__data--link">
                         {stream.name}
                       </Link>
                     ))}
