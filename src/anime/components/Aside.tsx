@@ -1,5 +1,4 @@
-import React from 'react';
-import { WatchlistContext } from '@/providers/WatchlistProvider';
+import { useWatchlistContext } from '@/anime/hooks/useWatchlistContext';
 import { AsideLink } from '@/anime/components/AsideLink';
 import { AsideAnime } from '@/anime/components/AsideAnime';
 import { HomeIcon } from '@/assets/HomeIcon';
@@ -23,7 +22,7 @@ const routes = [
 ];
 
 export function Aside() {
-  const { watchlist } = React.useContext(WatchlistContext);
+  const { watchlist } = useWatchlistContext();
 
   return (
     <div className="aside">
