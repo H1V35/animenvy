@@ -6,14 +6,16 @@ export function AnimePage() {
   const { animeId } = useParams();
   const { anime, isLoading } = useAnime(animeId!);
 
-  if (!anime) return null;
-
   if (isLoading) return <p>Loading...</p>;
 
   return (
     <div className="page">
       <div className="page__container">
-        <AnimeDetails anime={anime} />
+        {anime ? (
+          <AnimeDetails anime={anime} />
+        ) : (
+          <h2 className="page__title">{'Anime not found :('}</h2>
+        )}
       </div>
     </div>
   );
