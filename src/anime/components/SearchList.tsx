@@ -1,5 +1,5 @@
-import { SearchItem } from './SearchItem';
-import type { AnimeList } from '../interfaces/animeList';
+import { SearchItem } from '@/anime/components/SearchItem';
+import type { AnimeList } from '@/anime/interfaces/animeList';
 
 type SearchListProps = {
   list: AnimeList;

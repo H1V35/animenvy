@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Datum } from '../interfaces/animeList';
+import type { Datum } from '@/anime/interfaces/animeList';
 
 type AsideItemProps = {
   anime: Datum;

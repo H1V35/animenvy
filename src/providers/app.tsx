@@ -1,5 +1,5 @@
 import React from 'react';
-import { WatchlistProvider } from './WatchlistProvider';
+import { WatchlistProvider } from '@/providers/WatchlistProvider';
 
 type AppProviderProps = {
   children: React.ReactNode;

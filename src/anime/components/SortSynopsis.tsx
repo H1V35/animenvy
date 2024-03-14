@@ -2,7 +2,7 @@ type SearchItemSynopsisProps = {
   synopsis: string;
 };
 
-export function SearchItemSynopsis({ synopsis }: SearchItemSynopsisProps) {
+export function SortSynopsis({ synopsis }: SearchItemSynopsisProps) {
   const SYNOPSIS_MAX_LENGTH = 300;
 
   const sliceSynopsis = (synopsis: string) => {

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { roundFavorites } from '../../utils/roundFavorites';
-import { SearchItemSynopsis } from './SearchItemSynopsis';
-import { ToggleButton } from './ToggleButton';
-import type { Datum } from '../interfaces/animeList';
+import { roundFavorites } from '@/utils/roundFavorites';
+import { SortSynopsis } from '@/anime/components/SortSynopsis';
+import { ToggleButton } from '@/anime/components/ToggleButton';
+import type { Datum } from '@/anime/interfaces/animeList';
 
 type SearchItemProps = {
   anime: Datum;
@@ -40,7 +40,7 @@ export function SearchItem({ anime }: SearchItemProps) {
                 </p>
               )}
 
-              {anime.synopsis && <SearchItemSynopsis synopsis={anime.synopsis} />}
+              {anime.synopsis && <SortSynopsis synopsis={anime.synopsis} />}
             </div>
           </div>
         </div>

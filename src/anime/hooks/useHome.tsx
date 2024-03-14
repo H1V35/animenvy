@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { getSeasonsNow } from '../services/actions';
-import type { AnimeList } from '../interfaces/animeList';
+import { getSeasonsNow } from '@/anime/api/actions';
+import type { AnimeList } from '@/anime/interfaces/animeList';
 
 export function useHome() {
   const [season, setSeason] = React.useState<AnimeList>();

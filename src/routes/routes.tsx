@@ -1,13 +1,13 @@
 import { Suspense } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-import { MainLayout } from '../anime/layout/MainLayout';
-import { lazyImport } from '../utils/lazyImport';
+import { MainLayout } from '@/anime/layout/MainLayout';
+import { lazyImport } from '@/utils/lazyImport';
 
-const { HomePage } = lazyImport(() => import('../anime/pages/Home'), 'HomePage');
-const { SearchPage } = lazyImport(() => import('../anime/pages/Search'), 'SearchPage');
-const { WatchlistPage } = lazyImport(() => import('../anime/pages/Watchlist'), 'WatchlistPage');
-const { AnimePage } = lazyImport(() => import('../anime/pages/Anime'), 'AnimePage');
-const { ProfilePage } = lazyImport(() => import('../anime/pages/Profile'), 'ProfilePage');
+const { HomePage } = lazyImport(() => import('@/anime/pages/Home'), 'HomePage');
+const { SearchPage } = lazyImport(() => import('@/anime/pages/Search'), 'SearchPage');
+const { WatchlistPage } = lazyImport(() => import('@/anime/pages/Watchlist'), 'WatchlistPage');
+const { AnimePage } = lazyImport(() => import('@/anime/pages/Anime'), 'AnimePage');
+const { ProfilePage } = lazyImport(() => import('@/anime/pages/Profile'), 'ProfilePage');
 
 // eslint-disable-next-line react-refresh/only-export-components
 const App = () => {

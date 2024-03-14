@@ -1,5 +1,5 @@
-import { AnimeItem } from './AnimeItem';
-import type { Datum } from '../interfaces/animeList';
+import { AnimeItem } from '@/anime/components/AnimeItem';
+import type { Datum } from '@/anime/interfaces/animeList';
 
 type WatchListProps = {
   list: Datum[];

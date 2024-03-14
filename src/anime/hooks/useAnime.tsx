@@ -1,6 +1,6 @@
 import React from 'react';
-import { getAnime } from '../services/actions';
-import type { Data } from '../interfaces/anime';
+import { getAnime } from '@/anime/api/actions';
+import type { Data } from '@/anime/interfaces/anime';
 
 export function useAnime(animeId: string) {
   const [anime, setAnime] = React.useState<Data>();

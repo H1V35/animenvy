@@ -1,10 +1,10 @@
 import React from 'react';
-import { WatchlistContext } from '../../providers/WatchlistProvider';
-import { checkAnimeInWatchlist } from '../../utils/checkAnimeInWatchlist';
-import { SaveIcon } from '../../assets/SaveIcon';
-import { SaveFilledIcon } from '../../assets/SaveFilledIcon';
-import type { Datum } from '../interfaces/animeList';
-import type { Data } from '../interfaces/anime';
+import { WatchlistContext } from '@/providers/WatchlistProvider';
+import { checkAnimeInWatchlist } from '@/utils/checkAnimeInWatchlist';
+import { SaveIcon } from '@/assets/SaveIcon';
+import { SaveFilledIcon } from '@/assets/SaveFilledIcon';
+import type { Datum } from '@/anime/interfaces/animeList';
+import type { Data } from '@/anime/interfaces/anime';
 
 type Props = {
   anime: Datum | Data;

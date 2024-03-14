@@ -1,6 +1,6 @@
 import React from 'react';
-import { checkAnimeInWatchlist } from '../utils/checkAnimeInWatchlist';
-import type { Datum } from '../anime/interfaces/animeList';
+import { checkAnimeInWatchlist } from '@/utils/checkAnimeInWatchlist';
+import type { Datum } from '@/anime/interfaces/animeList';
 
 type WatchlistProviderProps = {
   children: React.ReactNode;

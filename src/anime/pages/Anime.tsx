@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
-import { useAnime } from '../hooks/useAnime';
-import { roundFavorites } from '../../utils/roundFavorites';
-import { ToggleButton } from '../components/ToggleButton';
+import { useAnime } from '@/anime/hooks/useAnime';
+import { roundFavorites } from '@/utils/roundFavorites';
+import { ToggleButton } from '@/anime/components/ToggleButton';
 
 // TODO: Componentization
 

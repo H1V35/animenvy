@@ -1,8 +1,8 @@
-import { animeApi } from '../api/animeApi';
-import type { Anime, Data } from '../interfaces/anime';
-import type { AnimeList } from '../interfaces/animeList';
+import { animeApi } from './animeApi';
+import type { Anime, Data } from '@/anime/interfaces/anime';
+import type { AnimeList } from '@/anime/interfaces/animeList';
 
-// TODO: Move to api folder
+// TODO: Abstract page from searchParams
 
 type Props = {
   searchParams: URLSearchParams;

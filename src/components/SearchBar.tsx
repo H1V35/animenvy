@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
-import { SearchIcon } from '../../assets/SearchIcon';
+import { SearchIcon } from '@/assets/SearchIcon';
 
 export function SearchBar() {
   const [query, setQuery] = React.useState('');

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { ToggleButton } from './ToggleButton';
-import type { Datum } from '../interfaces/animeList';
+import { ToggleButton } from '@/anime/components/ToggleButton';
+import type { Datum } from '@/anime/interfaces/animeList';
 
 type AnimeItemProps = {
   anime: Datum;

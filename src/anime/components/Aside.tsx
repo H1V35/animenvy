@@ -1,14 +1,19 @@
 import React from 'react';
-import { WatchlistContext } from '../../providers/WatchlistProvider';
-import { AsideLink } from './AsideLink';
-import { AsideAnime } from './AsideAnime';
-import { HomeIcon } from '../../assets/HomeIcon';
-import { HomeFilledIcon } from '../../assets/HomeFilledIcon';
-import { WatchlistIcon } from '../../assets/WatchlistIcon';
-import { WatchlistFilledIcon } from '../../assets/WatchlistFilledIcon';
+import { WatchlistContext } from '@/providers/WatchlistProvider';
+import { AsideLink } from '@/anime/components/AsideLink';
+import { AsideAnime } from '@/anime/components/AsideAnime';
+import { HomeIcon } from '@/assets/HomeIcon';
+import { HomeFilledIcon } from '@/assets/HomeFilledIcon';
+import { WatchlistIcon } from '@/assets/WatchlistIcon';
+import { WatchlistFilledIcon } from '@/assets/WatchlistFilledIcon';
 
 const routes = [
-  { to: '/', text: 'Home', icon: <HomeIcon />, iconFilled: <HomeFilledIcon /> },
+  {
+    to: '/',
+    text: 'Home',
+    icon: <HomeIcon />,
+    iconFilled: <HomeFilledIcon />,
+  },
   {
     to: '/watchlist',
     text: 'Watchlist',

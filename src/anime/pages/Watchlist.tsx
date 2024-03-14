@@ -1,6 +1,6 @@
 import React from 'react';
-import { WatchlistContext } from '../../providers/WatchlistProvider';
-import { WatchList } from '../components/WatchList';
+import { WatchlistContext } from '@/providers/WatchlistProvider';
+import { WatchList } from '@/anime/components/WatchList';
 
 export function WatchlistPage() {
   const { watchlist } = React.useContext(WatchlistContext);

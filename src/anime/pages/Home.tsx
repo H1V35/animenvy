@@ -1,6 +1,6 @@
-import { useHome } from '../hooks/useHome';
-import { AnimeList } from '../components/AnimeList';
-import { PagesNavigation } from '../components/PagesNavigation';
+import { useHome } from '@/anime/hooks/useHome';
+import { AnimeList } from '@/anime/components/AnimeList';
+import { PagesNavigation } from '@/components/PagesNavigation';
 
 export function HomePage() {
   const { season, isLoading, pagination } = useHome();

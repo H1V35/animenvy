@@ -1,8 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import { SearchBar } from './SearchBar';
-import userIcon from '../../assets/userIcon.svg';
-
-// TODO: Reorganize the structure and remove components like this from anime to a general folder
+import { SearchBar } from '@/components/SearchBar';
+import userIcon from '@/assets/userIcon.svg';
 
 export function NavBar() {
   return (

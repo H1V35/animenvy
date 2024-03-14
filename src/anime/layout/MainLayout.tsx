@@ -1,6 +1,6 @@
 import React from 'react';
-import { NavBar } from '../components/Navbar';
-import { Aside } from '../components/Aside';
+import { NavBar } from '@/components/Navbar';
+import { Aside } from '@/anime/components/Aside';
 
 type MainLayoutProps = {
   children: React.ReactNode;

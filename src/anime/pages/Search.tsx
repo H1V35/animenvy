@@ -1,6 +1,6 @@
-import { useSearch } from '../hooks/useSearch';
-import { SearchList } from '../components/SearchList';
-import { PagesNavigation } from '../components/PagesNavigation';
+import { useSearch } from '@/anime/hooks/useSearch';
+import { SearchList } from '@/anime/components/SearchList';
+import { PagesNavigation } from '@/components/PagesNavigation';
 
 export function SearchPage() {
   const { list, isLoading, pagination } = useSearch();

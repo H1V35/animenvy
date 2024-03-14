@@ -1,4 +1,4 @@
-import type { Datum } from '../anime/interfaces/animeList';
+import type { Datum } from '@/anime/interfaces/animeList';
 
 type CheckAnimeInWatchlistProps = {
   anime: Datum;
