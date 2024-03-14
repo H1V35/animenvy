@@ -28,7 +28,7 @@ export function SearchBar() {
           className="navbar__search--input"
         />
 
-        <button type="submit" className="navbar__search--button">
+        <button type="submit" title="Search" className="navbar__search--button">
           <SearchIcon />
         </button>
       </form>
