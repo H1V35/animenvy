@@ -1,12 +1,19 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { getSeasonsNow } from '@/anime/api/actions';
+import { usePagination } from '@/anime/hooks/usePagination';
 import type { AnimeList } from '@/anime/interfaces/animeList';
 
 export function useHome() {
   const [season, setSeason] = React.useState<AnimeList>();
   const [isLoading, setIsLoading] = React.useState(false);
   const [page, setPage] = React.useState(1);
+
+  const updatePage = (value: number) => {
+    setPage(value);
+  };
+
+  const { pagination } = usePagination({ list: season, page, updatePage });
   const location = useLocation();
 
   React.useEffect(() => {
@@ -19,33 +26,9 @@ export function useHome() {
     })();
   }, [location.search, page]);
 
-  // TODO: Make a custom hook for pagination
-  const hasPrevPage = page !== 1;
-  const hasNextPage = season?.pagination.has_next_page;
-
-  const prevPage = () => {
-    if (page > 1) setPage(page - 1);
-  };
-
-  const nextPage = () => {
-    if (hasNextPage === false) return;
-    setPage(page + 1);
-  };
-
-  const firstPage = () => {
-    if (hasPrevPage) setPage(1);
-  };
-
-  const lastPage = () => {
-    if (!season) return null;
-
-    const lastVisiblePage = season.pagination.last_visible_page;
-    if (page !== lastVisiblePage) setPage(lastVisiblePage);
-  };
-
   return {
     season,
     isLoading,
-    pagination: { page, hasPrevPage, hasNextPage, prevPage, nextPage, firstPage, lastPage },
+    pagination,
   };
 }
