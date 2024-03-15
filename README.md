@@ -47,3 +47,14 @@ Note: Make sure to review the API documentation to fully understand how to inter
 ## Recommendations
 
 - **BEM Methodology:** It is recommended to use the BEM methodology for naming CSS classes and maintain a consistent coding style. You can find more information about BEM [here](http://getbem.com/naming/).
+
+### View
+
+<div align="center">
+  <img src="public/project-view-1.png" alt="React Animes App view 1">
+  <img src="public/project-view-2.png" alt="React Animes App view 2">
+  <img src="public/project-view-3.png" alt="React Animes App view 3">
+  <img src="public/project-view-4.png" alt="React Animes App view 4">
+  <img src="public/project-view-5.png" alt="React Animes App view 5">
+
+</div>
