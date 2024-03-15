@@ -28,7 +28,12 @@ export function AnimeInfo({ anime }: AnimeInfoProps) {
 
             <div className="anime__data--links">
               {anime.streaming.map((stream) => (
-                <Link to={stream.url} target="_blank" className="anime__data--link">
+                <Link
+                  key={stream.name}
+                  to={stream.url}
+                  target="_blank"
+                  className="anime__data--link"
+                >
                   {stream.name}
                 </Link>
               ))}
