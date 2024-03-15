@@ -15,8 +15,8 @@ export const getSeasonsNow = async ({ searchParams, page = 1 }: Props): Promise<
   searchParams.append('limit', '12');
 
   try {
-    const response = await animeApi.get<AnimeList>(`/seasons/now?${searchParams.toString()}`);
-    return response;
+    const { data } = await animeApi.get<AnimeList>(`/seasons/now?${searchParams.toString()}`);
+    return data;
   } catch (e) {
     throw new Error('Error loading season');
   }
@@ -28,8 +28,8 @@ export const getSearch = async ({ searchParams, page = 1 }: Props): Promise<Anim
   searchParams.append('limit', '12');
 
   try {
-    const response = await animeApi.get<AnimeList>(`/anime?${searchParams.toString()}`);
-    return response;
+    const { data } = await animeApi.get<AnimeList>(`/anime?${searchParams.toString()}`);
+    return data;
   } catch (e) {
     throw new Error('Error loading search');
   }
@@ -37,7 +37,9 @@ export const getSearch = async ({ searchParams, page = 1 }: Props): Promise<Anim
 
 export const getAnime = async (id: string): Promise<Data> => {
   try {
-    const { data } = await animeApi.get<Anime>(`/anime/${id}/full`);
+    const {
+      data: { data },
+    } = await animeApi.get<Anime>(`/anime/${id}/full`);
     return data;
   } catch (e) {
     throw new Error('Error loading anime');
