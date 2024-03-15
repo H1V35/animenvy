@@ -1,34 +1,31 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
 import { getSeasonsNow } from '@/anime/api/actions';
 import { usePagination } from '@/anime/hooks/usePagination';
-import type { AnimeList } from '@/anime/interfaces/animeList';
 
 export function useHome() {
-  const [season, setSeason] = React.useState<AnimeList>();
-  const [isLoading, setIsLoading] = React.useState(false);
   const [page, setPage] = React.useState(1);
 
   const updatePage = (value: number) => {
     setPage(value);
   };
 
-  const { pagination } = usePagination({ list: season, page, updatePage });
   const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
 
-  React.useEffect(() => {
-    const searchParams = new URLSearchParams(location.search);
-
-    (async () => {
-      setIsLoading(true);
-      await getSeasonsNow({ searchParams, page }).then(setSeason);
-      setIsLoading(false);
-    })();
-  }, [location.search, page]);
-
-  return {
-    season,
+  const {
+    data: season,
+    error,
+    isError,
+    isFetching,
     isLoading,
-    pagination,
-  };
+  } = useQuery({
+    queryKey: ['home', { page }],
+    queryFn: () => getSeasonsNow({ searchParams, page }),
+  });
+
+  const { pagination } = usePagination({ list: season, page, updatePage });
+
+  return { season, error, isError, isFetching, isLoading, pagination };
 }

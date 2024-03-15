@@ -1,18 +1,17 @@
-import React from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { getAnime } from '@/anime/api/actions';
-import type { Data } from '@/anime/interfaces/anime';
 
 export function useAnime(animeId: string) {
-  const [anime, setAnime] = React.useState<Data>();
-  const [isLoading, setIsLoading] = React.useState(false);
+  const {
+    data: anime,
+    error,
+    isError,
+    isFetching,
+    isLoading,
+  } = useQuery({
+    queryKey: ['anime', animeId],
+    queryFn: () => getAnime(animeId),
+  });
 
-  React.useEffect(() => {
-    (async () => {
-      setIsLoading(true);
-      await getAnime(animeId).then(setAnime);
-      setIsLoading(false);
-    })();
-  }, [animeId]);
-
-  return { anime, isLoading };
+  return { anime, error, isError, isFetching, isLoading };
 }
