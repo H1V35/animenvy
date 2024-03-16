@@ -6,6 +6,8 @@ type MainLayoutProps = {
   children: React.ReactNode;
 };
 
+// TODO: Add Scroll to top
+
 export function MainLayout({ children }: MainLayoutProps) {
   return (
     <div className="layout">
